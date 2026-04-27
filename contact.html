@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">  
+<head>
+    <title>Webpage Design</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<body>
+  
+
+    <div class="main"> 
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">The Willow Room</h2>
+            </div>
+
+            <div class="menu">
+                <ul>
+                  <nav class="main-nav">
+                    <a href="index.html">HOME</a></li>
+                    <a href="About.html">ABOUT</a></li>
+                    <a href="Health.html">Health</a></li>
+                    <a href="Contact.html">CONTACT</a></li>
+                    <a href="community.html">COMMUNITY CHAT</a></li>
+                    <a href="login.html">LOGIN</a></li>
+                   <span id="adminBadge" style="display: none; background: #e9f0ed; color: #5e716a; padding: 4px 10px; border-radius: 20px; font-size: 11px; border: 1px solid #d1dbd7; margin-left: 10px;">
+    🌿 Admin Mode
+</span>
+                    </nav>    
+                </ul>
+            </div>
+            <section class="card">
+    <h2>Connect With Us</h2>
+    <p>Have questions or need support? Send us a message.</p>
+    
+</section>
+
+   
+<section class="card contact-section">
+    <h3>Send a <span class="accent">Letter</span></h3>
+    <p>Share your thoughts or questions with the sanctuary.</p>
+
+    <form action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value="dd899f5d-2584-4431-bc27-f563cb6ff50b">
+  <input type="text" name="name" required>
+  <input type="email" name="email" required>
+  <textarea name="message" required></textarea>
+  <button type="submit">Submit Form</button>
+</form>
+    
+    <section class="card social-section">
+    <h3>Follow our <span class="accent">Journey</span></h3>
+    <p>Join our daily sanctuary on social media.</p>
+    
+    <div class="social-links">
+        <a href="#" class="social-icon tiktok" title="TikTok">
+            <i class="fa-brands fa-tiktok"></i>
+        </a>
+        <a href="#" class="social-icon instagram" title="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="#" class="social-icon facebook" title="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="#" class="social-icon pinterest" title="Pinterest">
+            <i class="fa-brands fa-pinterest-p"></i>
+        </a>
+    </div>
+</section>
+<input type="hidden" name="_next" value="jk/index.html">
+</section>
+
+
+        </div> 
+        <div class="content">
+            <h1>Contact Us</h1>
+            <p class="par">Everything You Want and You Need. <br>
+                There is nothing You can't get.</p>
+
+               
+                    </div>
+                    <script src="script.js"></script>
+
+              <script>const MASTER_ADMIN_EMAIL = 'ribka8563@gmail.com'; 
+
+function checkAccessAndAdmin() {
+    const userEmail = localStorage.getItem('willowUser') || localStorage.getItem('userEmail');
+    
+    const adminBadges = document.querySelectorAll('.admin-badge, #adminBadge');
+    const adminLink = document.getElementById('admin-link');
+    if (document.body.classList.contains('private-page') && !userEmail) {
+        window.location.href = 'login.html';
+        return;
+    }
+
+
+    if (userEmail === MASTER_ADMIN_EMAIL) {
+        adminBadges.forEach(badge => badge.style.display = 'inline-block');
+        if (adminLink) adminLink.style.display = 'block';
+    }
+}
+</script>
+</body>
+</html>

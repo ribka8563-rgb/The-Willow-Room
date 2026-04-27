@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">  
+<head>
+    <title>The Willow Room</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+  
+<body>
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">The Willow Room</h2>
+            </div>
+<div class="admin-badge" style="display:none; background: gold; color: black; padding: 5px; border-radius: 5px;">
+    ADMIN MODE: RIBKA
+</div>
+</div>
+            <div class="menu">
+                <ul>
+                  <nav class="main-nav">
+                    <a href="index.html">HOME</a></li>
+                    <a href="About.html" class="active">ABOUT</a></li>
+                    <a href="Health.html">HEALTH</a></li>
+                    <a href="Contact.html">CONTACT</a></li>
+                    <a href="Community.html">COMMUNITY CHAT</a></li>
+                    <a href="login.html">LOGIN</a>
+                    <span id="adminBadge" style="display: none; background: #e9f0ed; color: #5e716a; padding: 5px 12px; border-radius: 20px; font-size: 11px; border: 1px solid #d1dbd7; margin-left: 10px;">
+    🌿 Admin Mode
+</span>
+                 </ul>
+                </nav>
+                </ul>
+            </div>
+            <h1>Our <span class="accent">Story</span></h1>
+        </header>
+
+        <section class="card animate-fade">
+            <div class="icon-circle">🌿</div>
+            <h3>Why the Willow?</h3>
+            <p>The Willow tree is known for its incredible <strong>flexibility</strong>. It can bend in the strongest storms without breaking. We believe motherhood requires that same beautiful strength.</p>
+            <p>The Willow Room was built to be a digital "root system" for you,providing stability, peace, and a place to grow at your own pace.</p>
+        </section>
+
+        <section class="card">
+            <h3>Our Three Pillars</h3>
+            <div class="pillar-item">
+                <strong>✨ Sanctuary:</strong> A design that calms the mind, using colors from nature and a clutter-free layout.
+            </div>
+            <div class="pillar-item">
+                <strong>🤝 Community:</strong> A safe, moderated space for mothers to share wisdom without judgment.
+            </div>
+            <div class="pillar-item">
+                <strong>📈 Growth:</strong> Simple tools to track your baby’s milestones and your own physical wellness.
+            </div>
+        </section>
+
+        <footer class="about-footer">
+            <p><em>Built with love for every mama-to-be.</em></p>
+            <a href="health.html" class="btn-link">Start Your Journey</a>
+        </footer>
+
+            
+
+        </div> 
+        <div class="content">
+            <h1></h1>
+        </div>
+    </div>
+    <script src="script.js"></script>
+<script>const MASTER_ADMIN_EMAIL = 'ribka8563@gmail.com'; 
+
+function checkAccessAndAdmin() {
+    // Make sure this matches whatever key you used in login.html
+    const userEmail = localStorage.getItem('willowUser') || localStorage.getItem('userEmail');
+    
+    const adminBadges = document.querySelectorAll('.admin-badge, #adminBadge');
+    const adminLink = document.getElementById('admin-link');
+
+    // If on a private page and not logged in, go to login
+    if (document.body.classList.contains('private-page') && !userEmail) {
+        window.location.href = 'login.html';
+        return;
+    }
+
+    // Show admin tools only for Ribka
+    if (userEmail === MASTER_ADMIN_EMAIL) {
+        adminBadges.forEach(badge => badge.style.display = 'inline-block');
+        // This ensures the link to admin.html shows up in your nav menu
+        if (adminLink) adminLink.style.display = 'block';
+    }
+}
+</script>
+</body>
+</html>

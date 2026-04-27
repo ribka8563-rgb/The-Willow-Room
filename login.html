@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Join The Willow Room</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<section class="card auth-card">
+    <h2>Enter the <span class="accent">Sanctuary</span></h2>
+    
+   <form id="loginForm">
+    <input type="hidden" name="access_key" value="0f3d6693-e4f5-44b1-af49-f0a3cc1e7adf">
+    <input type="email" name="email" id="userEmail" required placeholder="Email">
+    <input type="password" id="userPass" required placeholder="Password">
+    <button type="submit" class="auth-btn">Begin Your Session</button>
+</form>
+</section>
+</section>
+   <div class="menu">
+                <ul>
+                    <nav class="main-nav">
+                        <a href="index.html">HOME</a>
+                        <a href="About.html">ABOUT</a>
+                        <a href="Health.html">HEALTH</a>
+                        <a href="Contact.html">CONTACT</a>
+                        <a href="Community.html">COMMUNITY CHAT</a>
+                        <a href="login.html">LOGIN</a></li>
+
+        <div class="auth-footer">
+            <p>Don't have an account? <span class="auth-link">Register Here</span></p>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>const MASTER_ADMIN_EMAIL = 'ribka8563@gmail.com'; 
+
+function checkAccessAndAdmin() {
+    const userEmail = localStorage.getItem('willowUser') || localStorage.getItem('userEmail');
+    
+    const adminBadges = document.querySelectorAll('.admin-badge, #adminBadge');
+    const adminLink = document.getElementById('admin-link');
+
+    if (document.body.classList.contains('private-page') && !userEmail) {
+        window.location.href = 'login.html';
+        return;
+    }
+
+    if (userEmail === MASTER_ADMIN_EMAIL) {
+        adminBadges.forEach(badge => badge.style.display = 'inline-block');
+        if (adminLink) adminLink.style.display = 'block';
+    }
+}
+</script>
+</body>
+</html>
